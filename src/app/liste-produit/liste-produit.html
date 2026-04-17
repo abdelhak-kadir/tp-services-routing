@@ -1,0 +1,27 @@
+<div class="container mt-4">
+  <h2>Liste des Produits</h2>
+  <table class="table table-bordered table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th><th>Nom</th><th>Description</th>
+        <th>Prix</th><th>Quantité</th><th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (p of products; track p.id) {
+        <tr>
+          <td>{{ p.id }}</td>
+          <td>{{ p.nom }}</td>
+          <td>{{ p.description }}</td>
+          <td>{{ p.prix }} DH</td>
+          <td>{{ p.quantite }}</td>
+          <td>
+            <button class="btn btn-danger btn-sm" (click)="supprimer(p.id)">
+              Supprimer
+            </button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
