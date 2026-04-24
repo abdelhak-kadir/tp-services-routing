@@ -1,1 +1,17 @@
-<p>detail-produit works!</p>
+<div class="container mt-4" *ngIf="produit; else notFound">
+  <div class="card shadow">
+    <div class="card-header bg-success text-white">
+      <h4>Détail du Produit</h4>
+    </div>
+    <div class="card-body">
+      <p><strong>ID :</strong> {{ produit.id }}</p>
+      <p><strong>Nom :</strong> {{ produit.nom }}</p>
+      <p><strong>Description :</strong> {{ produit.description }}</p>
+      <p><strong>Prix :</strong> {{ produit.prix }} DH</p>
+      <p><strong>Quantité :</strong> {{ produit.quantite }}</p>
+    </div>
+  </div>
+</div>
+<ng-template #notFound>
+  <p class="text-danger mt-3 text-center">Produit introuvable.</p>
+</ng-template>

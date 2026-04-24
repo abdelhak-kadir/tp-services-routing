@@ -9,14 +9,15 @@
     </thead>
     <tbody>
       @for (p of products; track p.id) {
-        <tr>
+        <tr [routerLink]="[p.id]" style="cursor:pointer">
           <td>{{ p.id }}</td>
           <td>{{ p.nom }}</td>
           <td>{{ p.description }}</td>
           <td>{{ p.prix }} DH</td>
           <td>{{ p.quantite }}</td>
           <td>
-            <button class="btn btn-danger btn-sm" (click)="supprimer(p.id)">
+            <button class="btn btn-danger btn-sm"
+              (click)="$event.stopPropagation(); supprimer(p.id)">
               Supprimer
             </button>
           </td>
@@ -25,3 +26,6 @@
     </tbody>
   </table>
 </div>
+
+<!-- renders the child route detail-produit -->
+<router-outlet></router-outlet>
