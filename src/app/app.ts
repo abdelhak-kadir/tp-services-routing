@@ -5,7 +5,7 @@ import { ServiceProduit } from './service-produit';
 import { ListeProduit } from './liste-produit/liste-produit';
 @Component({
   selector: 'app-root',
-  imports: [ListeProduit, RouterOutlet],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
